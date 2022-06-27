@@ -5,10 +5,10 @@ from google.cloud import storage
 from apiKey import *
 
 def weather_api(name):
-    print("Fetching from API...")
+    print("Fetching data from API...")
     apireq = "{}?key={}&q={}".format(API, API_KEY, name)
-    print("Data Fetched.")
     response = requests.get(apireq)
+    print("Data Fetched.")
     return response.json()
 
 def upload_blob(contents, destination_blob_name):
@@ -17,7 +17,7 @@ def upload_blob(contents, destination_blob_name):
     bucket = storage_client.bucket(bucket_name)
     blob = bucket.blob(destination_blob_name)
     print(f"{destination_blob_name} is uploading to {bucket_name}.")
-    blob.upload_from_string(data=json.dumps(contents), content_type='application/json')
+    blob.upload_from_string(json.dumps(contents, indent=4))
 
 def hello_pubsub(event, context):
     pubsub_message = base64.b64decode(event['data']).decode('utf-8')
@@ -25,4 +25,3 @@ def hello_pubsub(event, context):
     data = weather_api(pubsub_message)
     res2 = upload_blob(data, pubsub_message+"_weather_report")
     return ("Weather Data successfully uploaded to bucket")
-  
