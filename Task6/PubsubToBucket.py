@@ -22,4 +22,6 @@ def hello_pubsub(event, context):
     upload_blob_from_memory(bucket_name, name, destination_blob_name)
     print("successfully uploaded")
     
+
+#Executed : hello_pubsub
     
