@@ -4,4 +4,4 @@
 
     > The API as *"https://api.weatherapi.com/v1/current.json"*
   
-    > The API_KEY *"api-key-as-provided-by-the-api.weatherapi.com"*
+    > The API_KEY as *"api-key-as-provided-by-the-api.weatherapi.com"*
