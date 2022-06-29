@@ -35,3 +35,4 @@ def translate_text(event, context):
 
 #executedfunction =  translate_text
 #bucketname = langtranslationdemo
+#destinationbucket = langtransfinal
