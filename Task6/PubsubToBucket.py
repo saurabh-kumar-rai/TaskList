@@ -22,5 +22,4 @@ def hello_pubsub(event, context):
     upload_blob_from_memory(bucket_name, name, destination_blob_name)
     print("successfully uploaded")
     
-    #add service_acc_credentials
-    #requirnments : google-cloud-storage==2.4.0
+    
